@@ -6,83 +6,51 @@ using System.Threading.Tasks;
 
 namespace robotsVSdinos
 {
-    public class Robot 
+    public class Robot
     {
         //MemVars
 
-        string name1;
-        int health1;
-        int power1;
-        string robotWeapon1;
-        int robotAttackDamage1;
-        int robotAttackPowerCost1;
-
-        string name2;
-        int health2;
-        int power2;
-        string robotWeapon2;
-        int robotAttackDamage2;
-        int robotAttackPowerCost2;
-
-        string name3;
-        int health3;
-        int power3;
-        string robotWeapon3;
-        int robotAttackDamage3;
-        int robotAttackPowerCost3;
+        public string Name;
+        public int Health;
+        public int Power;
+        public string RobotWeapon;
+        public int RobotAttackDamage;
+        public int RobotAttackPowerCost;
 
         //Constructor
 
-        public Robot()
+        public Robot(string type, int health, int power, string robotWeapon, int robotAttackDmg, int PowerCost)
         {
-            name1 = ("Tank");
-            health1 = 220;
-            power1 = 165;
-            robotWeapon1 = ("Mecro Melee");
-            robotAttackDamage1 = 4;
-            robotAttackPowerCost1 = 1;
+            Name = type;
+            Health = health;
+            Power = power;
+            RobotWeapon = robotWeapon;
+            RobotAttackDamage = robotAttackDmg;
+            RobotAttackPowerCost = PowerCost;
 
-            name2 = ("Mage");
-            health2 = 135;
-            power2 = 210;
-            robotWeapon2 = ("Mecro Blast");
-            robotAttackDamage2 = 22;
-            robotAttackPowerCost2 = 14;
-
-            name3 = ("Guard");
-            health3 = 170;
-            power3 = 185;
-            robotWeapon3 = ("Mecro Bow");
-            robotAttackDamage3 = 13;
-            robotAttackPowerCost3 = 8;
         }
         //MemMethods
-        public void RobotSelect()
-        {
-            Console.WriteLine("Select Guard, Mage, or Tank \n");
-            string character = Console.ReadLine();
 
-            switch (character)
+        public void CharacterSelection()
+        {
+            string userInput = Console.ReadLine();
+            switch (userInput)
             {
                 case "Tank":
-                    Console.WriteLine("Selected " + character);
+                    Robot Tank = new Robot(Tank, 230, 150, Melee, 5, 2);
                     break;
                 case "Mage":
-                    Console.WriteLine("Selected " + character);
+                    Robot Mage = new Robot(Mage, 150, 225, Staff, 15, 12);
                     break;
                 case "Guard":
-                    Console.WriteLine("Selected " + character);
+                    Robot Guard = new Robot(Guard, 185, 185, Bow, 10, 7);
                     break;
                 default:
-                    Console.WriteLine("Must Select Guard, Mage, or Tank");
-                    break;
+                    Console.WriteLine("")
             }
+
+
+
         }
-        public void Use()
-        {
-            RobotSelect();
-        }
-            
-        
     }
-}
+}    
