@@ -10,11 +10,15 @@ namespace robotsVSdinos
     {
         //MemVars
         public List<Robot> Baddies = new List<Robot>();
-
+        public List<Weapon> Weapons = new List<Weapon>();
         //Construct
 
-        public Fleet(int Tanks, int Mages, int Guards)
+        public Fleet()
         {
+            Weapons.Add(new Weapon("Melee", 5));
+            Weapons.Add(new Weapon("Staff", 15));
+            Weapons.Add(new Weapon("Bow", 10));
+             
             Baddies = new List<Robot>();
         }
         //MemMethods
@@ -38,6 +42,7 @@ namespace robotsVSdinos
                     Console.WriteLine("You Must Choose Robot Type: Tank, Mage, or Guard!");
                     break;
             }
+
         }
     }
 }

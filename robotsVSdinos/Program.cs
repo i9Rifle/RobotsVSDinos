@@ -10,6 +10,8 @@ namespace robotsVSdinos
     {
         static void Main(string[] args)
         {
+            Arena arena = new Arena();
+
         }
     }
 }
